@@ -27,7 +27,7 @@ cmake -C "%rootdir%CMakeLists.txt" -DCMAKE_INSTALL_PREFIX="%prefix%" -G %GENERAT
 cmake "%rootdir%%version%"
 cmake --build . --target install --config Release --clean-first
 MD "%rootdir%..\target\include\%target%"
-XCOPY "%prefix%\include" "%rootdir%..\target\include\%target%" /S /Y
+XCOPY "%prefix%\include\freetype2" "%rootdir%..\target\include\%target%" /S /Y
 MD "%rootdir%..\target\lib\%target%%target_lib_suffix%"
 COPY /Y "%prefix%\lib\freetype.lib" "%rootdir%..\target\lib\%target%%target_lib_suffix%"
 CD /D "%cwdir%"

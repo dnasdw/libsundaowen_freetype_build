@@ -17,7 +17,7 @@ cmake -DBUILD64=OFF -C "$rootdir/CMakeLists.txt" -DCMAKE_INSTALL_PREFIX="$prefix
 cmake "$rootdir/$version"
 cmake --build . --target install --config Release --clean-first
 mkdir "$rootdir/../target/include/$target"
-cp -rf "$prefix/include/"* "$rootdir/../target/include/$target"
+cp -rf "$prefix/include/freetype2/"* "$rootdir/../target/include/$target"
 mkdir "$rootdir/../target/lib/$target"
 cp -f "$prefix/lib/libfreetype.a" "$rootdir/../target/lib/$target"
 cd "$cwdir"
