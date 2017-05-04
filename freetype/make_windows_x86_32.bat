@@ -23,7 +23,7 @@ XCOPY "%rootdir%..\%version%" "%rootdir%%version%" /S /Y
 RD /S /Q "%rootdir%project"
 MD "%rootdir%project"
 CD /D "%rootdir%project"
-cmake -C "%rootdir%CMakeLists-MSVC.txt" -DCMAKE_INSTALL_PREFIX="%prefix%" -G %GENERATOR% "%rootdir%%version%"
+cmake -C "%rootdir%CMakeLists-MSVC.txt" -DWITH_ZLIB=OFF -DWITH_BZip2=OFF -DWITH_PNG=OFF -DWITH_HarfBuzz=OFF -DCMAKE_INSTALL_PREFIX="%prefix%" -G %GENERATOR% "%rootdir%%version%"
 cmake "%rootdir%%version%"
 cmake --build . --target install --config Release --clean-first
 MD "%rootdir%..\target\include\%target%"

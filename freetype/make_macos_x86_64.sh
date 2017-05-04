@@ -13,7 +13,7 @@ cp -rf "$rootdir/../$version/"* "$rootdir/$version"
 rm -rf "$rootdir/project"
 mkdir -p "$rootdir/project"
 cd "$rootdir/project"
-cmake -DBUILD64=ON -C "$rootdir/CMakeLists.txt" -DCMAKE_INSTALL_PREFIX="$prefix" "$rootdir/$version"
+cmake -DBUILD64=ON -C "$rootdir/CMakeLists.txt" -DWITH_ZLIB=OFF -DWITH_BZip2=OFF -DWITH_PNG=OFF -DWITH_HarfBuzz=OFF -DCMAKE_INSTALL_PREFIX="$prefix" "$rootdir/$version"
 cmake --build . --target install --config Release --clean-first
 mkdir -p "$rootdir/../target/include/$target"
 cp -rf "$prefix/include/freetype2/"* "$rootdir/../target/include/$target"
